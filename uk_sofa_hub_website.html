@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>UK Sofa Hub — Premium Sofas | Free UK Delivery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#C4A265;--gold2:#DFC28E;--gold3:#7A5E35;
+  --dark:#080807;--dark2:#111009;--dark3:#1A1912;
+  --cream:#FAFAF7;--cream2:#F3F1EB;--cream3:#E8E4DA;
+  --text:#1A1A16;--muted:#78756A;--muted2:#A8A49A;
+  --wa:#25D366;--wa2:#128C7E;--border:rgba(196,162,101,0.15);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--dark2)}::-webkit-scrollbar-thumb{background:var(--gold3);border-radius:3px}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(8,8,7,0.97);backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
+.nav-brand-wrap{display:flex;flex-direction:column;gap:2px}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--gold);letter-spacing:0.1em;text-decoration:none}
+.nav-tagline{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.28)}
+.nav-links{display:flex;gap:32px}
+.nav-links a{font-size:13px;color:rgba(255,255,255,0.48);text-decoration:none;letter-spacing:0.05em;transition:color 0.2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-wa{display:flex;align-items:center;gap:7px;background:transparent;border:1px solid rgba(37,211,102,0.5);color:var(--wa);padding:9px 20px;border-radius:100px;font-size:12px;font-weight:500;text-decoration:none;letter-spacing:0.04em;transition:all 0.25s}
+.nav-wa:hover{background:var(--wa);color:#fff;border-color:var(--wa)}
+.nav-wa svg{width:14px;height:14px;fill:currentColor;flex-shrink:0}
+
+.hero{min-height:100vh;background:var(--dark);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:68px 5vw 0;gap:4vw;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0.4}
+.hero-content{position:relative;z-index:2;padding:50px 0}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:30px;font-weight:500}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';width:28px;height:1px;background:var(--gold)}
+.hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,4.8vw,70px);font-weight:600;line-height:1.03;color:#fff;margin-bottom:24px}
+.hero-h1 em{color:var(--gold);font-style:italic}
+.hero-desc{font-size:15px;color:rgba(255,255,255,0.4);line-height:1.8;max-width:440px;margin-bottom:44px;font-weight:300}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn-hero-main{background:var(--gold);color:var(--dark);padding:15px 32px;border-radius:2px;font-size:13px;font-weight:600;text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:all 0.25s;display:inline-flex;align-items:center;gap:8px}
+.btn-hero-main:hover{background:var(--gold2);transform:translateY(-2px)}
+.btn-hero-wa{background:transparent;border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.7);padding:15px 32px;border-radius:2px;font-size:13px;font-weight:400;text-decoration:none;letter-spacing:0.06em;transition:all 0.25s;display:inline-flex;align-items:center;gap:8px}
+.btn-hero-wa:hover{border-color:var(--wa);color:var(--wa)}
+.btn-hero-wa svg,.btn-hero-main svg{width:16px;height:16px;fill:currentColor;flex-shrink:0}
+.hero-right{position:relative;z-index:2}
+.hero-img-frame{position:relative;border-radius:2px;overflow:hidden}
+.hero-img-frame img{width:100%;display:block;filter:brightness(1.05) contrast(1.05)}
+.hero-img-frame::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(196,162,101,0.08),transparent 60%);pointer-events:none;z-index:1}
+.hero-caption{position:absolute;bottom:0;left:0;right:0;padding:24px 20px;background:linear-gradient(0deg,rgba(8,8,7,0.85),transparent);z-index:2}
+.hero-caption-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#fff}
+.hero-caption-sub{font-size:11px;color:rgba(255,255,255,0.45);margin-top:4px;letter-spacing:0.08em}
+
+.marquee-wrap{background:var(--gold);overflow:hidden;height:44px;display:flex;align-items:center}
+.marquee-track{display:flex;white-space:nowrap;animation:marquee 22s linear infinite}
+.marquee-item{font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--dark);padding:0 40px;display:flex;align-items:center;gap:14px}
+.marquee-item::after{content:'◆';font-size:7px}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+section{padding:clamp(70px,9vw,130px) 5vw}
+.s-eyebrow{display:flex;align-items:center;gap:12px;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:500}
+.s-eyebrow::before{content:'';width:28px;height:1px;background:var(--gold)}
+.s-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3.8vw,52px);font-weight:600;line-height:1.1;margin-bottom:14px}
+.s-sub{font-size:15px;color:var(--muted);line-height:1.8;font-weight:300;max-width:520px}
+.center-header{text-align:center;margin-bottom:64px}
+.center-header .s-eyebrow{justify-content:center}
+.center-header .s-eyebrow::before{display:none}
+.center-header .s-sub{margin:0 auto}
+
+.collections{background:var(--cream)}
+.cat-nav{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0;margin-bottom:56px;border-bottom:1px solid var(--cream3)}
+.cat-btn{background:transparent;border:none;padding:14px 20px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:all 0.2s;font-family:'Outfit',sans-serif;font-weight:500;position:relative;white-space:nowrap}
+.cat-btn::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform 0.25s}
+.cat-btn:hover{color:var(--text)}
+.cat-btn.active{color:var(--text)}
+.cat-btn.active::after{transform:scaleX(1)}
+
+#product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2px;max-width:1300px;margin:0 auto;background:var(--cream3)}
+.p-card{background:var(--cream);display:flex;flex-direction:column;transition:all 0.3s;position:relative;overflow:hidden}
+.p-card:hover{background:#fff;box-shadow:0 20px 50px rgba(0,0,0,0.08)}
+.p-card-img{aspect-ratio:4/3;overflow:hidden;background:var(--cream2);position:relative;cursor:pointer}
+.p-card-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.65s ease;display:block}
+.p-card:hover .p-card-img img{transform:scale(1.05)}
+.p-card-badge{position:absolute;top:14px;left:14px;background:var(--dark);color:var(--gold);font-size:9px;letter-spacing:0.16em;text-transform:uppercase;padding:5px 12px;font-weight:500;z-index:2}
+.img-count{position:absolute;bottom:10px;right:10px;background:rgba(8,8,7,0.75);color:rgba(255,255,255,0.8);font-size:10px;padding:4px 8px;border-radius:2px;letter-spacing:0.06em;z-index:2}
+.p-card-body{padding:22px 22px 24px;flex:1;display:flex;flex-direction:column;border-top:1px solid var(--cream3)}
+.p-card-cat{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;font-weight:500}
+.p-card-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;margin-bottom:6px;line-height:1.15}
+.p-card-variants{font-size:12px;color:var(--muted2);margin-bottom:10px;letter-spacing:0.04em}
+.p-card-desc{font-size:13px;color:var(--muted);line-height:1.7;font-weight:300;flex:1;margin-bottom:18px}
+.p-card-footer{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.p-card-price{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--text)}
+.p-card-delivery{font-size:11px;color:var(--wa2);font-weight:600;letter-spacing:0.04em}
+.p-card-cta{display:flex;align-items:center;justify-content:center;gap:7px;background:var(--dark);color:var(--gold);padding:13px 20px;font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all 0.25s}
+.p-card-cta:hover{background:var(--gold);color:var(--dark)}
+.p-card-cta svg{width:14px;height:14px;fill:currentColor;flex-shrink:0}
+
+/* Lightbox */
+.lightbox{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.92);align-items:center;justify-content:center}
+.lightbox.open{display:flex}
+.lb-inner{position:relative;max-width:90vw;max-height:90vh}
+.lb-inner img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:2px}
+.lb-close{position:absolute;top:-40px;right:0;background:none;border:none;color:#fff;font-size:28px;cursor:pointer;opacity:0.7;transition:opacity 0.2s}
+.lb-close:hover{opacity:1}
+.lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(196,162,101,0.2);border:1px solid rgba(196,162,101,0.4);color:var(--gold);font-size:20px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s;border-radius:2px}
+.lb-prev{left:-56px}.lb-next{right:-56px}
+.lb-prev:hover,.lb-next:hover{background:var(--gold);color:var(--dark)}
+.lb-counter{position:absolute;bottom:-32px;left:50%;transform:translateX(-50%);font-size:12px;color:rgba(255,255,255,0.45);letter-spacing:0.1em}
+
+.why{background:var(--dark);color:#fff;padding:clamp(80px,10vw,140px) 5vw;position:relative}
+.why::before,.why::after{content:'';position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0.3}
+.why::before{top:0}.why::after{bottom:0}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(50px,8vw,130px);align-items:center;max-width:1200px;margin:0 auto}
+.why .s-title{color:#fff}
+.why .s-sub{color:rgba(255,255,255,0.38);max-width:400px}
+.feats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.05);margin-top:44px}
+.feat{background:var(--dark);padding:24px;border:1px solid rgba(196,162,101,0.08);transition:border-color 0.3s}
+.feat:hover{border-color:rgba(196,162,101,0.3)}
+.feat-ico{width:36px;height:36px;display:flex;align-items:center;justify-content:margin-bottom:14px;border-bottom:1px solid rgba(196,162,101,0.2);padding-bottom:14px;margin-bottom:14px}
+.feat-ico svg{width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.feat-t{font-size:13px;font-weight:500;color:#fff;margin-bottom:5px}
+.feat-d{font-size:12px;color:rgba(255,255,255,0.32);line-height:1.7;font-weight:300}
+.why-nums{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.05)}
+.wnum{background:var(--dark3);padding:32px 24px;text-align:center;border:1px solid rgba(196,162,101,0.06)}
+.wnum-big{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:700;color:var(--gold);line-height:1;display:block}
+.wnum-lbl{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-top:10px;display:block}
+
+.process{background:var(--cream2);padding:clamp(80px,10vw,140px) 5vw}
+.process-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--cream3);max-width:1000px;margin:64px auto 0;border:1px solid var(--cream3)}
+.proc-step{background:var(--cream);padding:48px 36px}
+.proc-num{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:700;color:var(--cream3);line-height:1;margin-bottom:20px;display:block}
+.proc-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;margin-bottom:12px}
+.proc-desc{font-size:13px;color:var(--muted);line-height:1.75;font-weight:300}
+
+.delivery-section{background:var(--cream);padding:clamp(80px,10vw,140px) 5vw}
+.delivery-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(50px,8vw,120px);align-items:start;max-width:1200px;margin:0 auto}
+.del-list{list-style:none;margin-top:36px;display:flex;flex-direction:column;gap:16px}
+.del-item{display:flex;align-items:flex-start;gap:16px;font-size:14px;line-height:1.7;font-weight:300}
+.del-check{width:20px;height:20px;border:1.5px solid var(--gold);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center}
+.del-check svg{width:9px;height:9px;stroke:var(--gold);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.contact-panel{background:var(--dark);padding:48px 40px}
+.contact-panel h3{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:var(--gold);margin-bottom:14px}
+.contact-panel p{font-size:14px;color:rgba(255,255,255,0.4);line-height:1.8;margin-bottom:32px;font-weight:300}
+.btn-wa-panel{display:flex;align-items:center;justify-content:center;gap:9px;background:var(--wa);color:#fff;padding:17px 28px;font-size:13px;font-weight:500;letter-spacing:0.06em;text-decoration:none;transition:all 0.25s;width:100%}
+.btn-wa-panel:hover{background:var(--wa2);transform:translateY(-2px)}
+.btn-wa-panel svg{width:17px;height:17px;fill:#fff;flex-shrink:0}
+.trust-row{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px}
+.trust-item{font-size:11px;color:rgba(255,255,255,0.28);letter-spacing:0.06em;display:flex;align-items:center;gap:6px}
+.trust-item::before{content:'—';color:var(--gold);font-size:10px}
+
+footer{background:var(--dark2);border-top:1px solid var(--border);padding:72px 5vw 32px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:80px;margin-bottom:56px}
+.footer-brand{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--gold);letter-spacing:0.08em;margin-bottom:12px}
+.footer-desc{font-size:13px;color:rgba(255,255,255,0.28);line-height:1.8;font-weight:300;max-width:280px;margin-bottom:24px}
+.footer-wa-link{display:inline-flex;align-items:center;gap:8px;color:var(--wa);font-size:13px;text-decoration:none;transition:opacity 0.2s}
+.footer-wa-link:hover{opacity:0.75}
+.footer-wa-link svg{width:15px;height:15px;fill:currentColor}
+.footer-col h4{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-bottom:20px;font-weight:500}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,0.38);text-decoration:none;margin-bottom:12px;transition:color 0.2s;font-weight:300}
+.footer-col a:hover{color:var(--gold)}
+.footer-bar{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-bar span{font-size:11px;color:rgba(255,255,255,0.18);letter-spacing:0.06em}
+
+.float-wa{position:fixed;bottom:28px;right:28px;z-index:300;width:56px;height:56px;background:var(--wa);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.35);animation:wapulse 3s infinite;transition:transform 0.25s}
+.float-wa:hover{transform:scale(1.1);animation:none}
+.float-wa svg{width:26px;height:26px;fill:#fff}
+@keyframes wapulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.35)}50%{box-shadow:0 4px 28px rgba(37,211,102,0.6),0 0 0 8px rgba(37,211,102,0.07)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero-content>*{animation:fadeUp 0.8s ease both}
+.hero-eyebrow{animation-delay:.1s}.hero-h1{animation-delay:.2s}.hero-desc{animation-delay:.3s}.hero-actions{animation-delay:.4s}
+.hero-right{animation:fadeUp 1s .25s ease both}
+
+@media(max-width:980px){
+  .hero{grid-template-columns:1fr;text-align:center;padding-top:96px}
+  .hero-eyebrow{justify-content:center}
+  .hero-desc,.hero-actions{margin-left:auto;margin-right:auto}
+  .hero-actions{justify-content:center}
+  .hero-right{order:-1;max-width:500px;margin:0 auto}
+  .why-grid,.delivery-inner{grid-template-columns:1fr}
+  .why-nums{order:-1}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .lb-prev{left:-44px}.lb-next{right:-44px}
+}
+@media(max-width:640px){
+  .nav-links{display:none}
+  .process-steps{grid-template-columns:1fr}
+  .feats,.why-nums{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .cat-btn{padding:12px 12px;font-size:10px}
+  .lb-prev,.lb-next{display:none}
+}
+</style>
+</head>
+<body>
+
+<script>
+// ═══════════════════════════════════════════════════════════════════════
+// ✏️  EASY EDIT SECTION — Everything you need to change is RIGHT HERE
+// ═══════════════════════════════════════════════════════════════════════
+
+const SETTINGS = {
+  whatsappNumber: "447438135313",
+  brandName: "UK Sofa Hub",
+  tagline: "Premium Sofas · Free UK Delivery"
+};
+
+const COLLECTIONS = [
+  { id:"sofabed",      label:"Sofa Bed"           },
+  { id:"ushape",       label:"U-Shape"            },
+  { id:"lilly",        label:"U-Shape Lilly"      },
+  { id:"chesterfield", label:"Chesterfield"       },
+  { id:"ambassador",   label:"Ambassador"         },
+  { id:"elaska",       label:"Elaska"             },
+  { id:"borius",       label:"Borius"             },
+  { id:"corner",       label:"Corner Sofa"        }
+];
+
+// ✏️ PRODUCTS
+// image: path to the main photo e.g. "images/ushape/ushape1.jpg"
+// images: array of ALL photos for this product (shown in lightbox when clicked)
+// price, name, desc, badge — edit freely
+// To ADD a product: copy a { } block, paste below, edit details
+
+const PRODUCTS = [
+
+  // ── SOFA BED ──────────────────────────────────────────────────────
+  {
+    collection:"sofabed", collectionLabel:"Sofa Bed",
+    name:"The Sofa Bed — Style 1", price:"£1,199", badge:"Versatile",
+    variants:"Available in multiple colours",
+    desc:"The perfect two-in-one — a stunning corner sofa by day, a comfortable guest bed by night. Premium mechanism, easy to convert, built to last.",
+    image:"images/sofabed/sofa bed with 1.jpg",
+    images:["images/sofabed/sofa bed with 1.jpg","images/sofabed/sofabed2.jpg","images/sofabed/sofabed3.jpg"],
+    waText:"I'm interested in the Sofa Bed Style 1 (£1,199). Can you help with colour options and availability?"
+  },
+
+  // ── U-SHAPE ───────────────────────────────────────────────────────
+  {
+    collection:"ushape", collectionLabel:"U-Shape Collection",
+    name:"U-Shape Sofa — Style 1", price:"£699", badge:"Best Seller",
+    variants:"Available in multiple colours",
+    desc:"Our signature U-shape design. Maximum seating for the whole family with premium fabric and generous cushioning — a timeless choice for any living room.",
+    image:"images/ushape/ushape1.jpg",
+    images:["images/ushape/ushape1.jpg","images/ushape/ushape2.jpg","images/ushape/ushape3.jpg","images/ushape/ushape4.jpg","images/ushape/ushape5.jpg","images/ushape/ushape6.jpg","images/ushape/ushape7.jpg","images/ushape/ushape1.jpg","images/ushape/ushape2.jpg"],
+    waText:"I'm interested in the U-Shape Sofa (£699). Can you show me colour options and availability?"
+  },
+
+  // ── LILLY U-SHAPE ─────────────────────────────────────────────────
+  {
+    collection:"lilly", collectionLabel:"U-Shape Lilly",
+    name:"U-Shape Lilly — Style 1", price:"£699", badge:"New In",
+    variants:"Available in multiple colours",
+    desc:"A softer, more curved take on the classic U-shape. The Lilly features rounded arms and a plush seat depth — perfect for those who love to sink in and relax.",
+    image:"images/ushape/lilly u shape/lilly ushape 1.jpg",
+    images:["images/ushape/lilly u shape/lilly ushape 1.jpg","images/ushape/lilly u shape/lilly ushape 2.jpg","images/ushape/lilly u shape/lilly u shape 3.jpg"],
+    waText:"I'm interested in the U-Shape Lilly (£699). Can you help with colour options and availability?"
+  },
+
+  // ── CHESTERFIELD ─────────────────────────────────────────────────
+  {
+    collection:"chesterfield", collectionLabel:"Chesterfield Collection",
+    name:"The Chesterfield Corner", price:"£699", badge:"Classic",
+    variants:"Available in multiple colours",
+    desc:"Timeless deep button tufting and scroll arms — the classic Chesterfield corner sofa. A statement piece that brings character and elegance to any home.",
+    image:"images/chesterfaild/chesterfeild1.jpg",
+    images:["images/chesterfaild/chesterfeild1.jpg"],
+    waText:"I'm interested in the Chesterfield Corner Sofa (£699). Can you help with colours and availability?"
+  },
+
+  // ── AMBASSADOR ───────────────────────────────────────────────────
+  {
+    collection:"ambassador", collectionLabel:"Ambassador Collection",
+    name:"The Ambassador", price:"£699", badge:"Signature",
+    variants:"Available in multiple colours",
+    desc:"Our grand Ambassador corner sofa. Commanding presence, exceptional comfort — a bold statement piece that seats the whole family with ease.",
+    image:"images/ambassador/ambassador 1.jpg",
+    images:["images/ambassador/ambassador 1.jpg"],
+    waText:"I'm interested in the Ambassador Sofa (£699). Can you help with colours and availability?"
+  },
+
+  // ── ELASKA ────────────────────────────────────────────────────────
+  {
+    collection:"elaska", collectionLabel:"Elaska Collection",
+    name:"Elaska Set — Style 1", price:"£699", badge:"New In",
+    variants:"Single sofa & full set available",
+    desc:"Clean architectural lines and exceptional fabric quality. The Elaska is designed for those who want their sofa to define the room. Set also available.",
+    image:"images/elaska/elaska 1.1.jpg",
+    images:["images/elaska/elaska 1.1.jpg","images/elaska/elaska1.jpg"],
+    waText:"I'm interested in the Elaska Style 1 (£699). Can you help with the single or set options?"
+  },
+  {
+    collection:"elaska", collectionLabel:"Elaska Collection",
+    name:"Elaska Set — Style 2", price:"£699", badge:"",
+    variants:"Single sofa & full set available",
+    desc:"The Elaska in a different finish — same exceptional quality and clean design. Choose the single sofa or the complete set.",
+    image:"images/elaska/elaska 2.1.jpg",
+    images:["images/elaska/elaska 2.1.jpg","images/elaska/elaska2.jpg"],
+    waText:"I'm interested in the Elaska Style 2 (£699). Can you help with the single or set options?"
+  },
+  {
+    collection:"elaska", collectionLabel:"Elaska Collection",
+    name:"Elaska Set — Style 3", price:"£699", badge:"",
+    variants:"Single sofa & full set available",
+    desc:"The third Elaska variant — a distinctive finish for those who want something truly unique. Available as single sofa or complete set.",
+    image:"images/elaska/elaska3.1.jpg",
+    images:["images/elaska/elaska3.1.jpg","images/elaska/elaska 3.jpg"],
+    waText:"I'm interested in the Elaska Style 3 (£699). Can you help with the single or set options?"
+  },
+
+  // ── BORIUS ────────────────────────────────────────────────────────
+  {
+    collection:"borius", collectionLabel:"Borius Collection",
+    name:"The Borius — Style 1", price:"£699", badge:"Luxury",
+    variants:"Available in multiple colours",
+    desc:"Deep button tufting, chrome-capped feet, and a rich velvet finish. The Borius is our most luxurious design — a true centrepiece for the discerning buyer.",
+    image:"images/borius/borius1.jpg",
+    images:["images/borius/borius1.jpg","images/borius/borius 2.jpg","images/borius/borius 3.jpg"],
+    waText:"I'm interested in the Borius Style 1 (£699). Can you help with colours and availability?"
+  },
+
+  // ── CORNER SOFA ───────────────────────────────────────────────────
+  // Group A
+  {
+    collection:"corner", collectionLabel:"Corner Sofa Collection",
+    name:"Corner Sofa — A1", price:"£699", badge:"Popular",
+    variants:"Available in multiple colours",
+    desc:"A classic L-shape corner sofa with premium fabric, generous cushioning, and a timeless design that works in any living room.",
+    image:"images/corner/A1.jpg",
+    images:["images/corner/A1.jpg"],
+    waText:"I'm interested in the Corner Sofa A1 (£699). Can you help with colours and availability?"
+  },
+  {
+    collection:"corner", collectionLabel:"Corner Sofa Collection",
+    name:"Corner Sofa — A2", price:"£699", badge:"",
+    variants:"Available in multiple colours",
+    desc:"Premium corner sofa with a bold dark fabric finish. Stylish, durable, and designed for everyday family life.",
+    image:"images/corner/A2.jpg",
+    images:["images/corner/A2.jpg"],
+    waText:"I'm interested in the Corner Sofa A2 (£699). Can you help with colours and availability?"
+  },
+  {
+    collection:"corner", collectionLabel:"Corner Sofa Collection",
+    name:"Corner Sofa — A3", price:"£699", badge:"",
+    variants:"Navy Blue available",
+    desc:"A striking navy blue corner sofa with button tufting. A bold statement piece that brings personality and colour to any living room.",
+    image:"images/corner/A3.jpg",
+    images:["images/corner/A3.jpg"],
+    waText:"I'm interested in the Corner Sofa A3 in Navy Blue (£699). Can you help with availability?"
+  },
+  // Group B
+  {
+    collection:"corner", collectionLabel:"Corner Sofa Collection",
+    name:"Corner Sofa — B1", price:"£699", badge:"",
+    variants:"Available in multiple colours",
+    desc:"Deep button tufting with a scroll arm design. Rich, luxurious fabric that adds warmth and character to your living space.",
+    image:"images/corner/B1.jpg",
+    images:["images/corner/B1.jpg","images/corner/B2.jpg","images/corner/B3.jpg","images/corner/B4.jpg","images/corner/B5.jpg","images/corner/B7.jpg","images/corner/B8.jpg","images/corner/B9.jpg","images/corner/B10.jpg"],
+    waText:"I'm interested in the Corner Sofa B range (£699). Can you show me colour options?"
+  },
+  // Group C
+  {
+    collection:"corner", collectionLabel:"Corner Sofa Collection",
+    name:"Corner Sofa — C1", price:"£699", badge:"",
+    variants:"Available in multiple colours",
+    desc:"A refined corner sofa with clean lines and premium upholstery. Versatile, elegant, and built to last for years of everyday comfort.",
+    image:"images/corner/C1.jpg",
+    images:["images/corner/C1.jpg","images/corner/C2.jpg","images/corner/C3.jpg","images/corner/C4.jpg"],
+    waText:"I'm interested in the Corner Sofa C range (£699). Can you show me colour options?"
+  },
+  // D & F
+  {
+    collection:"corner", collectionLabel:"Corner Sofa Collection",
+    name:"Corner Sofa — D1", price:"£699", badge:"",
+    variants:"Brown ribbed fabric",
+    desc:"A distinctive ribbed brown fabric corner sofa — warm, textured, and completely unique. Perfect for those who want something different.",
+    image:"images/corner/D1.jpg",
+    images:["images/corner/D1.jpg"],
+    waText:"I'm interested in the Corner Sofa D1 in brown ribbed fabric (£699). Can you help?"
+  },
+  {
+    collection:"corner", collectionLabel:"Corner Sofa Collection",
+    name:"Corner Sofa — F1", price:"£699", badge:"Premium",
+    variants:"Cream velvet diamond edition",
+    desc:"The premium velvet L-sectional diamond edition — crystal embellishments, plush cream fabric, and an unmistakably luxurious finish.",
+    image:"images/corner/f1.jpg",
+    images:["images/corner/f1.jpg","images/corner/f2.jpg"],
+    waText:"I'm interested in the Corner Sofa velvet diamond edition (£699). Can you help with availability?"
+  }
+
+];
+// ═══════════════════════════════════════════════════════════════════════
+// END OF EDIT SECTION
+// ═══════════════════════════════════════════════════════════════════════
+
+const WA_SVG=`<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.557 4.126 1.533 5.862L.057 23.428a.5.5 0 00.609.61l5.748-1.498A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.655-.52-5.17-1.428l-.37-.221-3.833.999 1.03-3.726-.242-.384A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>`;
+
+function waLink(t){return `https://wa.me/${SETTINGS.whatsappNumber}?text=${encodeURIComponent('Hi UK Sofa Hub! '+t)}`;}
+
+// Lightbox state
+let lbImgs=[],lbIdx=0;
+function openLightbox(imgs,idx){
+  lbImgs=imgs;lbIdx=idx;
+  const lb=document.getElementById('lightbox');
+  lb.classList.add('open');
+  updateLightbox();
+}
+function updateLightbox(){
+  document.getElementById('lb-img').src=lbImgs[lbIdx];
+  document.getElementById('lb-counter').textContent=(lbIdx+1)+' / '+lbImgs.length;
+}
+function lbPrev(){lbIdx=(lbIdx-1+lbImgs.length)%lbImgs.length;updateLightbox();}
+function lbNext(){lbIdx=(lbIdx+1)%lbImgs.length;updateLightbox();}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('open');}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  document.querySelectorAll('.dyn-brand').forEach(el=>el.textContent=SETTINGS.brandName);
+  document.querySelectorAll('.dyn-tag').forEach(el=>el.textContent=SETTINGS.tagline);
+  document.querySelectorAll('.dyn-wa').forEach(el=>el.href=waLink('I would like to enquire about your sofas.'));
+
+  // Tabs
+  const catNav=document.getElementById('cat-nav');
+  let tabs=`<button class="cat-btn active" onclick="filterCat('all',this)">All</button>`;
+  COLLECTIONS.forEach(c=>{tabs+=`<button class="cat-btn" onclick="filterCat('${c.id}',this)">${c.label}</button>`;});
+  catNav.innerHTML=tabs;
+
+  // Grid
+  const grid=document.getElementById('product-grid');
+  grid.innerHTML=PRODUCTS.map(p=>{
+    const imgs=p.images||[p.image];
+    const imgTag=p.image
+      ? `<img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.parentNode.innerHTML='<div style=\"width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--cream3)\"><svg width=\"32\" height=\"32\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"var(--muted2)\" stroke-width=\"1\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"/><circle cx=\"8.5\" cy=\"8.5\" r=\"1.5\"/><path d=\"M21 15l-5-5L5 21\"/></svg><span style=\"font-size:11px;color:var(--muted2);letter-spacing:0.1em\">PHOTO</span></div>'">`
+      : `<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--cream3)"><span style="font-size:11px;color:var(--muted2);letter-spacing:0.1em">PHOTO</span></div>`;
+    const badgeHTML=p.badge?`<span class="p-card-badge">${p.badge}</span>`:'';
+    const countHTML=imgs.length>1?`<span class="img-count">${imgs.length} photos</span>`:'';
+    const imgsJSON=JSON.stringify(imgs).replace(/"/g,'&quot;');
+    return `<div class="p-card" data-cat="${p.collection}">
+      <div class="p-card-img" onclick="openLightbox(${imgsJSON.replace(/&quot;/g,"'")},0)">
+        ${imgTag}${badgeHTML}${countHTML}
+      </div>
+      <div class="p-card-body">
+        <div class="p-card-cat">${p.collectionLabel}</div>
+        <h3 class="p-card-name">${p.name}</h3>
+        <div class="p-card-variants">${p.variants}</div>
+        <p class="p-card-desc">${p.desc}</p>
+        <div class="p-card-footer">
+          <span class="p-card-price">${p.price}</span>
+          <span class="p-card-delivery">✓ Free Delivery</span>
+        </div>
+        <a class="p-card-cta" href="${waLink(p.waText)}">${WA_SVG} Enquire on WhatsApp</a>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Footer cols
+  const fc=document.getElementById('footer-cols');
+  if(fc)fc.innerHTML=COLLECTIONS.map(c=>`<a href="#collections">${c.label}</a>`).join('');
+
+  // Close lightbox on background click
+  document.getElementById('lightbox').addEventListener('click',function(e){if(e.target===this)closeLightbox();});
+
+  // Keyboard navigation
+  document.addEventListener('keydown',e=>{
+    const lb=document.getElementById('lightbox');
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='ArrowLeft')lbPrev();
+    if(e.key==='ArrowRight')lbNext();
+    if(e.key==='Escape')closeLightbox();
+  });
+});
+
+function filterCat(cat,btn){
+  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.p-card').forEach(card=>{
+    card.style.display=(cat==='all'||card.dataset.cat===cat)?'flex':'none';
+  });
+}
+
+window.addEventListener('scroll',()=>{
+  document.querySelector('nav').style.background=window.scrollY>40?'rgba(8,8,7,0.99)':'rgba(8,8,7,0.97)';
+});
+</script>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lb-inner">
+    <button class="lb-close" onclick="closeLightbox()">✕</button>
+    <button class="lb-prev" onclick="lbPrev()">‹</button>
+    <img id="lb-img" src="" alt="Sofa">
+    <button class="lb-next" onclick="lbNext()">›</button>
+    <div class="lb-counter" id="lb-counter"></div>
+  </div>
+</div>
+
+<!-- FLOAT WA -->
+<a class="float-wa dyn-wa" href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.557 4.126 1.533 5.862L.057 23.428a.5.5 0 00.609.61l5.748-1.498A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.655-.52-5.17-1.428l-.37-.221-3.833.999 1.03-3.726-.242-.384A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg></a>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand-wrap">
+    <a class="nav-brand dyn-brand" href="#">UK SOFA HUB</a>
+    <span class="nav-tagline dyn-tag">Premium Furniture</span>
+  </div>
+  <div class="nav-links">
+    <a href="#collections">Shop</a>
+    <a href="#why">About</a>
+    <a href="#delivery">Delivery</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="nav-wa dyn-wa" href="#"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.557 4.126 1.533 5.862L.057 23.428a.5.5 0 00.609.61l5.748-1.498A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.655-.52-5.17-1.428l-.37-.221-3.833.999 1.03-3.726-.242-.384A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> WhatsApp Us</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Premium UK Furniture</div>
+    <h1 class="hero-h1">Luxury Sofas,<br><em>Free Delivery</em><br>Across The UK</h1>
+    <p class="hero-desc">Discover our curated range of premium corner sofas — each crafted for UK homes and delivered free to your door, anywhere in the country.</p>
+    <div class="hero-actions">
+      <a class="btn-hero-main" href="#collections"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>Browse Collection</a>
+      <a class="btn-hero-wa dyn-wa" href="#"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.557 4.126 1.533 5.862L.057 23.428a.5.5 0 00.609.61l5.748-1.498A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.655-.52-5.17-1.428l-.37-.221-3.833.999 1.03-3.726-.242-.384A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>Message on WhatsApp</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-frame">
+      <img src="images/hero.jpg/hero.jpg" alt="Premium Corner Sofa" onerror="this.style.minHeight='300px';this.style.background='var(--dark3)'">
+      <div class="hero-caption">
+        <div class="hero-caption-name">UK Sofa Hub</div>
+        <div class="hero-caption-sub">Premium Sofas · Free UK Delivery</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap"><div class="marquee-track"><span class="marquee-item">Free UK Delivery</span><span class="marquee-item">Premium Quality</span><span class="marquee-item">8 Collections</span><span class="marquee-item">14-Day Returns</span><span class="marquee-item">WhatsApp Support</span><span class="marquee-item">UK Supplier</span><span class="marquee-item">Quality Checked</span><span class="marquee-item">Fast Response</span><span class="marquee-item">Free UK Delivery</span><span class="marquee-item">Premium Quality</span><span class="marquee-item">8 Collections</span><span class="marquee-item">14-Day Returns</span><span class="marquee-item">WhatsApp Support</span><span class="marquee-item">UK Supplier</span><span class="marquee-item">Quality Checked</span><span class="marquee-item">Fast Response</span></div></div>
+
+<!-- COLLECTIONS -->
+<section class="collections" id="collections">
+  <div class="center-header">
+    <div class="s-eyebrow">Our Collections</div>
+    <h2 class="s-title">Crafted for Every Home</h2>
+    <p class="s-sub">Eight distinct collections — each designed with UK homes in mind. Premium fabrics, generous proportions, and free delivery on every order.</p>
+  </div>
+  <div class="cat-nav" id="cat-nav"></div>
+  <div id="product-grid"></div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="why-grid">
+    <div>
+      <div class="s-eyebrow" style="color:var(--gold)">Why Choose Us</div>
+      <h2 class="s-title">Quality You Can Trust.<br>Prices That Make Sense.</h2>
+      <p class="s-sub">We work directly with UK manufacturers — cutting out the middleman to bring you luxury quality at honest prices, with free delivery always included.</p>
+      <div class="feats">
+        <div class="feat"><div class="feat-ico"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feat-t">Free UK Delivery</div><div class="feat-d">Delivered to your door anywhere in the UK at no extra cost.</div></div>
+        <div class="feat"><div class="feat-ico"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feat-t">Premium Fabric</div><div class="feat-d">Soft, durable upholstery crafted for everyday family life.</div></div>
+        <div class="feat"><div class="feat-ico"><svg viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feat-t">Fast WhatsApp Response</div><div class="feat-d">Message us and get a real reply within 2 hours.</div></div>
+        <div class="feat"><div class="feat-ico"><svg viewBox="0 0 24 24"><path d="M3 10h18M3 14h18M10 3v18M14 3v18" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feat-t">14-Day Returns</div><div class="feat-d">Not satisfied? Return within 14 days. No questions asked.</div></div>
+      </div>
+    </div>
+    <div class="why-nums">
+      <div class="wnum"><span class="wnum-big">Free</span><span class="wnum-lbl">UK Delivery</span></div>
+      <div class="wnum"><span class="wnum-big">8</span><span class="wnum-lbl">Collections</span></div>
+      <div class="wnum"><span class="wnum-big">14</span><span class="wnum-lbl">Day Returns</span></div>
+      <div class="wnum"><span class="wnum-big">2hr</span><span class="wnum-lbl">Response Time</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="center-header">
+    <div class="s-eyebrow">How It Works</div>
+    <h2 class="s-title">Three Steps to Your Perfect Sofa</h2>
+  </div>
+  <div class="process-steps">
+    <div class="proc-step"><span class="proc-num">01</span><h3 class="proc-title">Browse & Choose</h3><p class="proc-desc">Explore our collections. Find the style, size, and colour that works for your home and your budget.</p></div>
+    <div class="proc-step"><span class="proc-num">02</span><h3 class="proc-title">Message on WhatsApp</h3><p class="proc-desc">Tap Enquire on any sofa to chat directly. We answer every question and confirm your order in minutes.</p></div>
+    <div class="proc-step"><span class="proc-num">03</span><h3 class="proc-title">Free UK Delivery</h3><p class="proc-desc">Your sofa is delivered free to your door anywhere in the UK within 7–14 business days.</p></div>
+  </div>
+</section>
+
+<!-- DELIVERY -->
+<section class="delivery-section" id="delivery">
+  <div class="delivery-inner">
+    <div>
+      <div class="s-eyebrow">Delivery & Returns</div>
+      <h2 class="s-title">Delivered Free.<br>Anywhere in the UK.</h2>
+      <ul class="del-list">
+        <li class="del-item"><span class="del-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span>Free delivery to any UK address — no hidden charges</li>
+        <li class="del-item"><span class="del-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span>Delivered within 7–14 business days of order confirmation</li>
+        <li class="del-item"><span class="del-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span>14-day hassle-free returns policy for complete peace of mind</li>
+        <li class="del-item"><span class="del-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span>Every sofa inspected and quality-checked before dispatch</li>
+        <li class="del-item"><span class="del-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span>Delivery updates sent via WhatsApp throughout</li>
+        <li class="del-item"><span class="del-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span>Specialist furniture delivery team for all large items</li>
+      </ul>
+    </div>
+    <div class="contact-panel" id="contact">
+      <h3>Ready to Order?</h3>
+      <p>Message us on WhatsApp and we'll help you choose the perfect sofa, answer every question, and arrange your free delivery — all in one simple conversation.</p>
+      <a class="btn-wa-panel dyn-wa" href="#"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.557 4.126 1.533 5.862L.057 23.428a.5.5 0 00.609.61l5.748-1.498A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.655-.52-5.17-1.428l-.37-.221-3.833.999 1.03-3.726-.242-.384A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>Message Us on WhatsApp</a>
+      <div class="trust-row"><span class="trust-item">UK Supplier</span><span class="trust-item">Free Delivery</span><span class="trust-item">14-Day Returns</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand dyn-brand">UK SOFA HUB</div>
+      <p class="footer-desc">Premium sofas delivered free across the UK. Eight collections, honest prices, and always a WhatsApp message away.</p>
+      <a class="footer-wa-link dyn-wa" href="#"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.557 4.126 1.533 5.862L.057 23.428a.5.5 0 00.609.61l5.748-1.498A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.655-.52-5.17-1.428l-.37-.221-3.833.999 1.03-3.726-.242-.384A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>Message Us on WhatsApp</a>
+    </div>
+    <div class="footer-col"><h4>Collections</h4><div id="footer-cols"></div></div>
+    <div class="footer-col"><h4>Information</h4><a href="#delivery">Delivery Info</a><a href="#delivery">Returns Policy</a><a href="#why">About Us</a><a href="#contact">Contact</a></div>
+  </div>
+  <div class="footer-bar"><span>© 2025 UK Sofa Hub. All rights reserved.</span><span>Free UK Delivery · Premium Quality · WhatsApp Support</span></div>
+</footer>
+</body>
+</html>
